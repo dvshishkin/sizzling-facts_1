@@ -6,7 +6,7 @@
     <p class="hero-eyebrow">Гамбург · еда · ферментация · собирательство</p>
     <h1>{{ .Site.Params.author }}</h1>
     <p class="hero-lead">{{ .Site.Params.description }}</p>
-    <a href="{{ "/blog/" | absURL }}" class="hero-cta">Читать блог →</a>
+    <a href="{{ "/blog/" | relURL }}" class="hero-cta">Читать блог →</a>
   </div>
 </section>
 
@@ -21,7 +21,7 @@
       <h2>Шеф-повар, преподаватель, исследователь вкуса</h2>
       <p>Здесь будет текст о себе — добавь его в <code>content/about/_index.md</code></p>
       {{ end }}
-      <a href="{{ "/about/" | absURL }}" class="section-link">Подробнее</a>
+      <a href="{{ "/about/" | relURL }}" class="section-link">Подробнее</a>
     </div>
   </div>
 </section>
@@ -49,7 +49,7 @@
       <h2>Текущие проекты</h2>
       <p>Воркшопы, курсы, коллаборации — добавь в <code>content/projects/_index.md</code></p>
       {{ end }}
-      <a href="{{ "/projects/" | absURL }}" class="section-link">Все проекты</a>
+      <a href="{{ "/projects/" | relURL }}" class="section-link">Все проекты</a>
     </div>
   </div>
 </section>
@@ -72,7 +72,7 @@
       {{ else }}
       <p>Добавь фотографии в <code>content/portfolio/</code> — они автоматически появятся здесь.</p>
       {{ end }}
-      <a href="{{ "/portfolio/" | absURL }}" class="section-link">Смотреть портфолио</a>
+      <a href="{{ "/portfolio/" | relURL }}" class="section-link">Смотреть портфолио</a>
     </div>
   </div>
 </section>
@@ -100,7 +100,7 @@
       {{ else }}
       <p>Пока нет постов. Добавь первую статью в <code>content/blog/</code>.</p>
       {{ end }}
-      <a href="{{ "/blog/" | absURL }}" class="section-link">Все записи</a>
+      <a href="{{ "/blog/" | relURL }}" class="section-link">Все записи</a>
     </div>
   </div>
 </section>
