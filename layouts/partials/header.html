@@ -1,12 +1,12 @@
 <header class="site-header">
   <div class="container">
-    <a href="{{ "/" | relLangURL }}" class="site-logo">{{ .Site.Title }}</a>
+    <a href="{{ "/" | absLangURL }}" class="site-logo">{{ .Site.Title }}</a>
     <nav class="site-nav">
       {{- range .Site.Params.sections }}
       {{- if .absolute }}
-      <a href="{{ .href }}"{{ if eq .id "blog" }} class="nav-blog"{{ end }}>{{ i18n .id }}</a>
+      <a href="{{ .href | absURL }}"{{ if eq .id "blog" }} class="nav-blog"{{ end }}>{{ i18n .id }}</a>
       {{- else }}
-      <a href="{{ .href | relLangURL }}"{{ if eq .id "blog" }} class="nav-blog"{{ end }}>{{ i18n .id }}</a>
+      <a href="{{ .href | absLangURL }}"{{ if eq .id "blog" }} class="nav-blog"{{ end }}>{{ i18n .id }}</a>
       {{- end }}
       {{- end }}
     </nav>
@@ -14,13 +14,13 @@
       <div class="lang-switch">
         {{- if .Translations }}
           {{- range .Translations }}
-          <a href="{{ .RelPermalink }}" hreflang="{{ .Lang }}">{{ upper .Lang }}</a>
+          <a href="{{ .Permalink }}" hreflang="{{ .Lang }}">{{ upper .Lang }}</a>
           {{- end }}
         {{- else }}
           {{- if eq .Lang "ru" }}
-          <a href="/en/" hreflang="en">EN</a>
+          <a href="{{ "/en/" | absURL }}" hreflang="en">EN</a>
           {{- else }}
-          <a href="/" hreflang="ru">RU</a>
+          <a href="{{ "/" | absURL }}" hreflang="ru">RU</a>
           {{- end }}
         {{- end }}
       </div>
