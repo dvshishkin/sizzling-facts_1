@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="{{ if .IsHome }}page-home{{ else }}page-inner{{ end }}">
+
+  {{ partial "header.html" . }}
+
+  <main id="main">
+    {{- block "main" . }}{{- end }}
+  </main>
+
+  {{ partial "footer.html" . }}
+
+  {{- if not .IsHome }}
+  {{- /* Pagefind только на внутренних страницах, не на главной */ -}}
+  {{- end }}
+
+</body>
+</html>

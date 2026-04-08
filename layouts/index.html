@@ -1,0 +1,108 @@
+{{ define "main" }}
+
+<!-- ===== ГЕРОЙ ===== -->
+<section class="hero">
+  <div class="container">
+    <p class="hero-eyebrow">Гамбург · еда · ферментация · собирательство</p>
+    <h1>{{ .Site.Params.author }}</h1>
+    <p class="hero-lead">{{ .Site.Params.description }}</p>
+    <a href="/blog/" class="hero-cta">Читать блог →</a>
+  </div>
+</section>
+
+<!-- ===== ОБО МНЕ ===== -->
+<section class="landing-section" id="about">
+  <div class="container">
+    <p class="section-label">Обо мне</p>
+    <div class="section-body">
+      {{ with .Site.GetPage "/about" }}
+        {{ .Content }}
+      {{ else }}
+      <h2>Шеф-повар, преподаватель, исследователь вкуса</h2>
+      <p>Здесь будет текст о себе — добавь его в <code>content/about/_index.md</code></p>
+      {{ end }}
+      <a href="/about/" class="section-link">Подробнее</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ИНТЕРЕСЫ ===== -->
+<section class="landing-section" id="interests">
+  <div class="container">
+    <p class="section-label">Интересы</p>
+    <div class="section-body">
+      <h2>О чём я думаю и что делаю руками</h2>
+      <p>Ферментация и живые культуры. Городское собирательство в Гамбурге. Дикие растения и их использование в кухне. Познание через телесный опыт.</p>
+      <p>Дополни этот текст в <code>content/_index.md</code> в блоке <code>interests</code>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ПРОЕКТЫ ===== -->
+<section class="landing-section" id="projects">
+  <div class="container">
+    <p class="section-label">Проекты и воркшопы</p>
+    <div class="section-body">
+      {{ with .Site.GetPage "/projects" }}
+        {{ .Content }}
+      {{ else }}
+      <h2>Текущие проекты</h2>
+      <p>Воркшопы, курсы, коллаборации — добавь в <code>content/projects/_index.md</code></p>
+      {{ end }}
+      <a href="/projects/" class="section-link">Все проекты</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ПОРТФОЛИО ===== -->
+<section class="landing-section" id="portfolio">
+  <div class="container">
+    <p class="section-label">Фото-портфолио</p>
+    <div class="section-body">
+      <h2>Еда и пространство глазами</h2>
+      {{- $images := (.Site.GetPage "/portfolio").Resources.ByType "image" }}
+      {{- if $images }}
+      <div class="portfolio-grid">
+        {{- range first 8 $images }}
+        <div class="portfolio-grid-item">
+          <img src="{{ .RelPermalink }}" alt="{{ .Title }}" loading="lazy">
+        </div>
+        {{- end }}
+      </div>
+      {{ else }}
+      <p>Добавь фотографии в <code>content/portfolio/</code> — они автоматически появятся здесь.</p>
+      {{ end }}
+      <a href="/portfolio/" class="section-link">Смотреть портфолио</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== БЛОГ (последние посты) ===== -->
+<section class="landing-section" id="blog">
+  <div class="container">
+    <p class="section-label">Последнее из блога</p>
+    <div class="section-body">
+      {{- $posts := where .Site.RegularPages "Section" "blog" }}
+      {{- if $posts }}
+      <div class="blog-preview">
+        {{- range first 2 $posts }}
+        <div class="blog-preview-card">
+          <a href="{{ .RelPermalink }}">
+            {{- with .Params.cover }}
+            <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+            {{- end }}
+            <h3>{{ .Title }}</h3>
+            <span class="card-date">{{ .Date.Format "2 January 2006" }}</span>
+          </a>
+        </div>
+        {{- end }}
+      </div>
+      {{ else }}
+      <p>Пока нет постов. Добавь первую статью в <code>content/blog/</code>.</p>
+      {{ end }}
+      <a href="/blog/" class="section-link">Все записи</a>
+    </div>
+  </div>
+</section>
+
+{{ end }}

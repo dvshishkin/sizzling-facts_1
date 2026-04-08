@@ -1,0 +1,14 @@
+<footer class="site-footer">
+  <div class="container">
+    <p>© {{ now.Year }} {{ .Site.Params.author }} · <a href="https://t.me/fullscoop" target="_blank" rel="noopener">Telegram</a></p>
+  </div>
+</footer>
+
+<script>
+  // Мобильное меню
+  const toggle = document.querySelector('.nav-toggle');
+  const nav    = document.querySelector('.site-nav');
+  if (toggle) {
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+  }
+</script>

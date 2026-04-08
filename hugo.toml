@@ -1,0 +1,49 @@
+baseURL = "https://sizzling-facts.com/"
+languageCode = "ru"
+defaultContentLanguage = "ru"
+title = "Sizzling Facts"
+
+# Отключаем встроенный RSS там, где не нужен
+disableKinds = ["taxonomy", "term"]
+
+# Включаем теги для блога
+[taxonomies]
+  tag = "tags"
+
+[params]
+  description = "Иван Шишкин — шеф-повар, преподаватель, Гамбург. О еде, ферментации, городском собирательстве и познании через телесный опыт."
+  author = "Иван Шишкин"
+
+  # Секции лендинга (порядок важен)
+  [[params.sections]]
+    id    = "about"
+    label = "Обо мне"
+    href  = "/about/"
+
+  [[params.sections]]
+    id    = "interests"
+    label = "Интересы"
+    href  = "/#interests"
+
+  [[params.sections]]
+    id    = "projects"
+    label = "Проекты"
+    href  = "/projects/"
+
+  [[params.sections]]
+    id    = "portfolio"
+    label = "Портфолио"
+    href  = "/portfolio/"
+
+  [[params.sections]]
+    id    = "blog"
+    label = "Блог"
+    href  = "/blog/"
+
+[build]
+  writeStats = true
+
+[outputs]
+  home    = ["HTML"]
+  section = ["HTML"]
+  page    = ["HTML"]

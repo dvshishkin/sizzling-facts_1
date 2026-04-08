@@ -1,0 +1,76 @@
+{{ define "main" }}
+<div class="container">
+  <div class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{- with .Params.description }}
+    <p class="page-desc">{{ . }}</p>
+    {{- end }}
+  </div>
+</div>
+
+{{- if eq .Section "blog" }}
+
+<!-- Поиск Pagefind -->
+<div class="search-wrapper">
+  <div id="search"></div>
+</div>
+
+<!-- Список постов -->
+<div class="blog-list">
+  {{- range .Pages }}
+  <article class="post-card">
+    <div class="post-card-body">
+      <div class="post-card-meta">
+        <time>{{ .Date.Format "2 January 2006" }}</time>
+        {{- with .Params.tags }}
+        {{- range . }}<span>{{ . }}</span>{{ end }}
+        {{- end }}
+      </div>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      {{- with .Params.excerpt }}<p class="post-card-excerpt">{{ . }}</p>
+      {{- else }}<p class="post-card-excerpt">{{ .Summary }}</p>
+      {{- end }}
+      {{- with .Params.tags }}
+      <div class="post-card-tags">
+        {{- range . }}
+        <a href="/tags/{{ . | urlize }}/" class="tag">{{ . }}</a>
+        {{- end }}
+      </div>
+      {{- end }}
+    </div>
+    {{- with .Params.cover }}
+    <div class="post-card-image">
+      <a href="{{ $.RelPermalink }}">
+        <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+      </a>
+    </div>
+    {{- end }}
+  </article>
+  {{- end }}
+</div>
+
+<!-- Пагинация -->
+{{ template "_internal/pagination.html" . }}
+
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    new PagefindUI({ element: '#search', showSubResults: false, translations: {
+      placeholder: 'Поиск по блогу…',
+      zero_results: 'Ничего не найдено'
+    }});
+  });
+</script>
+
+{{- else }}
+
+<!-- Обычная секция (about, projects, portfolio) -->
+<div class="container">
+  <div class="article-body">
+    {{ .Content }}
+  </div>
+</div>
+
+{{- end }}
+
+{{ end }}

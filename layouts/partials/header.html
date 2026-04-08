@@ -1,0 +1,11 @@
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo">{{ .Site.Title }}</a>
+    <nav class="site-nav">
+      {{- range .Site.Params.sections }}
+      <a href="{{ .href }}"{{ if eq .id "blog" }} class="nav-blog"{{ end }}>{{ .label }}</a>
+      {{- end }}
+    </nav>
+    <button class="nav-toggle" aria-label="Меню">☰</button>
+  </div>
+</header>
