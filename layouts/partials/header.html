@@ -3,8 +3,11 @@
     <a href="{{ "/" | relLangURL }}" class="site-logo">{{ .Site.Title }}</a>
     <nav class="site-nav">
       {{- range .Site.Params.sections }}
-      {{- $href := cond .absolute .href (.href | relLangURL) }}
-      <a href="{{ $href }}"{{ if eq .id "blog" }} class="nav-blog"{{ end }}>{{ i18n .id }}</a>
+      {{- if .absolute }}
+      <a href="{{ .href }}"{{ if eq .id "blog" }} class="nav-blog"{{ end }}>{{ i18n .id }}</a>
+      {{- else }}
+      <a href="{{ .href | relLangURL }}"{{ if eq .id "blog" }} class="nav-blog"{{ end }}>{{ i18n .id }}</a>
+      {{- end }}
       {{- end }}
     </nav>
     <div class="header-actions">
