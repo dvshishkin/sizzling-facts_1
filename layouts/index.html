@@ -3,25 +3,24 @@
 <!-- ===== ГЕРОЙ ===== -->
 <section class="hero">
   <div class="container">
-    <p class="hero-eyebrow">Гамбург · еда · ферментация · собирательство</p>
+    <p class="hero-eyebrow">{{ i18n "hero_eyebrow" }}</p>
     <h1>{{ .Site.Params.author }}</h1>
     <p class="hero-lead">{{ .Site.Params.description }}</p>
-    <a href="{{ .Site.BaseURL }}blog/" class="hero-cta">Читать блог →</a>
+    <a href="{{ .Site.BaseURL }}blog/" class="hero-cta">{{ i18n "hero_cta" }}</a>
   </div>
 </section>
 
 <!-- ===== ОБО МНЕ ===== -->
 <section class="landing-section" id="about">
   <div class="container">
-    <p class="section-label">Обо мне</p>
+    <p class="section-label">{{ i18n "section_label_about" }}</p>
     <div class="section-body">
       {{ with .Site.GetPage "/about" }}
         {{ .Content }}
       {{ else }}
-      <h2>Шеф-повар, преподаватель, исследователь вкуса</h2>
-      <p>Здесь будет текст о себе — добавь его в <code>content/about/_index.md</code></p>
+      <h2>{{ i18n "section_label_about" }}</h2>
       {{ end }}
-      <a href="{{ .Site.BaseURL }}about/" class="section-link">Подробнее</a>
+      <a href="{{ "/about/" | relLangURL }}" class="section-link">{{ i18n "link_more" }}</a>
     </div>
   </div>
 </section>
@@ -29,11 +28,10 @@
 <!-- ===== ИНТЕРЕСЫ ===== -->
 <section class="landing-section" id="interests">
   <div class="container">
-    <p class="section-label">Интересы</p>
+    <p class="section-label">{{ i18n "section_label_interests" }}</p>
     <div class="section-body">
-      <h2>О чём я думаю и что делаю руками</h2>
-      <p>Ферментация и живые культуры. Городское собирательство в Гамбурге. Дикие растения и их использование в кухне. Познание через телесный опыт.</p>
-      <p>Дополни этот текст в <code>content/_index.md</code> в блоке <code>interests</code>.</p>
+      <h2>{{ i18n "interests_h2" }}</h2>
+      <p>{{ i18n "interests_body" }}</p>
     </div>
   </div>
 </section>
@@ -41,15 +39,12 @@
 <!-- ===== ПРОЕКТЫ ===== -->
 <section class="landing-section" id="projects">
   <div class="container">
-    <p class="section-label">Проекты и воркшопы</p>
+    <p class="section-label">{{ i18n "section_label_projects" }}</p>
     <div class="section-body">
       {{ with .Site.GetPage "/projects" }}
         {{ .Content }}
-      {{ else }}
-      <h2>Текущие проекты</h2>
-      <p>Воркшопы, курсы, коллаборации — добавь в <code>content/projects/_index.md</code></p>
       {{ end }}
-      <a href="{{ .Site.BaseURL }}projects/" class="section-link">Все проекты</a>
+      <a href="{{ "/projects/" | relLangURL }}" class="section-link">{{ i18n "link_all_projects" }}</a>
     </div>
   </div>
 </section>
@@ -57,9 +52,8 @@
 <!-- ===== ПОРТФОЛИО ===== -->
 <section class="landing-section" id="portfolio">
   <div class="container">
-    <p class="section-label">Фото-портфолио</p>
+    <p class="section-label">{{ i18n "section_label_portfolio" }}</p>
     <div class="section-body">
-      <h2>Еда и пространство глазами</h2>
       {{- $images := (.Site.GetPage "/portfolio").Resources.ByType "image" }}
       {{- if $images }}
       <div class="portfolio-grid">
@@ -69,10 +63,8 @@
         </div>
         {{- end }}
       </div>
-      {{ else }}
-      <p>Добавь фотографии в <code>content/portfolio/</code> — они автоматически появятся здесь.</p>
       {{ end }}
-      <a href="{{ .Site.BaseURL }}portfolio/" class="section-link">Смотреть портфолио</a>
+      <a href="{{ "/portfolio/" | relLangURL }}" class="section-link">{{ i18n "link_portfolio" }}</a>
     </div>
   </div>
 </section>
@@ -80,7 +72,7 @@
 <!-- ===== БЛОГ (последние посты) ===== -->
 <section class="landing-section" id="blog">
   <div class="container">
-    <p class="section-label">Последнее из блога</p>
+    <p class="section-label">{{ i18n "section_label_blog" }}</p>
     <div class="section-body">
       {{- $posts := where .Site.RegularPages "Section" "blog" }}
       {{- if $posts }}
@@ -97,10 +89,10 @@
         </div>
         {{- end }}
       </div>
-      {{ else }}
-      <p>Пока нет постов. Добавь первую статью в <code>content/blog/</code>.</p>
-      {{ end }}
-      <a href="{{ .Site.BaseURL }}blog/" class="section-link">Все записи</a>
+      {{- else }}
+        {{- with i18n "blog_in_ru" }}<p class="blog-lang-note">{{ . }}</p>{{ end }}
+      {{- end }}
+      <a href="{{ .Site.BaseURL }}blog/" class="section-link">{{ i18n "link_all_posts" }}</a>
     </div>
   </div>
 </section>

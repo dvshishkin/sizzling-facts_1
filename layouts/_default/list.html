@@ -56,8 +56,8 @@
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     new PagefindUI({ element: '#search', showSubResults: false, translations: {
-      placeholder: 'Поиск по блогу…',
-      zero_results: 'Ничего не найдено'
+      placeholder: '{{ i18n "search_placeholder" }}',
+      zero_results: '{{ i18n "search_zero" }}'
     }});
   });
 </script>

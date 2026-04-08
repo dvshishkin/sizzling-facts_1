@@ -1,44 +1,64 @@
 baseURL = "https://dvshishkin.github.io/sizzling-facts_1/"
-languageCode = "ru"
 defaultContentLanguage = "ru"
-title = "Sizzling Facts"
+defaultContentLanguageInSubdir = false
 
-# Отключаем встроенный RSS там, где не нужен
+# Отключаем ненужные выходные форматы
 disableKinds = ["taxonomy", "term"]
 
 # Включаем теги для блога
 [taxonomies]
   tag = "tags"
 
+# ——— Языки ———————————————————————————————————————————————————
+
+[languages]
+
+  [languages.ru]
+    languageCode = "ru"
+    languageName = "Русский"
+    title        = "Sizzling Facts"
+    weight       = 1
+    [languages.ru.params]
+      description = "Иван Шишкин — шеф-повар, преподаватель, Гамбург. О еде, ферментации, городском собирательстве и познании через телесный опыт."
+      author      = "Иван Шишкин"
+
+  [languages.en]
+    languageCode = "en"
+    languageName = "English"
+    title        = "Sizzling Facts"
+    weight       = 2
+    [languages.en.params]
+      description = "Ivan Shishkin — chef, educator, Hamburg. On food, fermentation, urban foraging and learning through embodied experience."
+      author      = "Ivan Shishkin"
+
+# ——— Общие параметры ————————————————————————————————————————
+
 [params]
-  description = "Иван Шишкин — шеф-повар, преподаватель, Гамбург. О еде, ферментации, городском собирательстве и познании через телесный опыт."
-  author = "Иван Шишкин"
-
-  # Секции лендинга (порядок важен)
+  # Секции лендинга (порядок важен).
+  # label убран — берётся из i18n по id.
+  # absolute = true означает «не добавлять языковой префикс к href».
   [[params.sections]]
-    id    = "about"
-    label = "Обо мне"
-    href  = "/about/"
+    id       = "about"
+    href     = "/about/"
 
   [[params.sections]]
-    id    = "interests"
-    label = "Интересы"
-    href  = "/#interests"
+    id       = "interests"
+    href     = "/#interests"
 
   [[params.sections]]
-    id    = "projects"
-    label = "Проекты"
-    href  = "/projects/"
+    id       = "projects"
+    href     = "/projects/"
 
   [[params.sections]]
-    id    = "portfolio"
-    label = "Портфолио"
-    href  = "/portfolio/"
+    id       = "portfolio"
+    href     = "/portfolio/"
 
   [[params.sections]]
-    id    = "blog"
-    label = "Блог"
-    href  = "/blog/"
+    id       = "blog"
+    href     = "/blog/"
+    absolute = true   # блог всегда на русском, без /en/ префикса
+
+# ——— Сборка ——————————————————————————————————————————————————
 
 [build]
   writeStats = true

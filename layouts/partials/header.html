@@ -1,11 +1,27 @@
 <header class="site-header">
   <div class="container">
-    <a href="/" class="site-logo">{{ .Site.Title }}</a>
+    <a href="{{ "/" | relLangURL }}" class="site-logo">{{ .Site.Title }}</a>
     <nav class="site-nav">
       {{- range .Site.Params.sections }}
-      <a href="{{ $.Site.BaseURL }}{{ strings.TrimPrefix "/" .href }}"{{ if eq .id "blog" }} class="nav-blog"{{ end }}>{{ .label }}</a>
+      {{- $href := cond .absolute .href (.href | relLangURL) }}
+      <a href="{{ $href }}"{{ if eq .id "blog" }} class="nav-blog"{{ end }}>{{ i18n .id }}</a>
       {{- end }}
     </nav>
-    <button class="nav-toggle" aria-label="Меню">☰</button>
+    <div class="header-actions">
+      <div class="lang-switch">
+        {{- if .Translations }}
+          {{- range .Translations }}
+          <a href="{{ .RelPermalink }}" hreflang="{{ .Lang }}">{{ upper .Lang }}</a>
+          {{- end }}
+        {{- else }}
+          {{- if eq .Lang "ru" }}
+          <a href="/en/" hreflang="en">EN</a>
+          {{- else }}
+          <a href="/" hreflang="ru">RU</a>
+          {{- end }}
+        {{- end }}
+      </div>
+      <button class="nav-toggle" aria-label="{{ i18n `menu` }}">☰</button>
+    </div>
   </div>
 </header>

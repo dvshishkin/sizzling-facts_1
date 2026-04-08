@@ -84,6 +84,29 @@ a:hover { text-decoration: underline; }
   color: var(--color-text);
 }
 
+/* ——— Переключатель языка + группа действий ——————————————— */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+.lang-switch a {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+  padding: 0.15rem 0.45rem;
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.lang-switch a:hover {
+  color: var(--color-text);
+  border-color: var(--color-muted);
+  text-decoration: none;
+}
+
 /* ============================================================
    ЛЕНДИНГ — главная страница
    ============================================================ */
@@ -218,6 +241,13 @@ a:hover { text-decoration: underline; }
 .blog-preview-card .card-date {
   font-size: 0.8rem;
   color: var(--color-muted);
+}
+
+.blog-lang-note {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  font-style: italic;
+  margin-bottom: 0.5rem;
 }
 
 /* ============================================================
@@ -470,6 +500,7 @@ a:hover { text-decoration: underline; }
   .site-nav { display: none; flex-direction: column; position: absolute; top: 56px; left: 0; right: 0; background: var(--color-bg); border-bottom: 1px solid var(--color-border); padding: 1rem 1.5rem; gap: 1rem; }
   .site-nav.open { display: flex; }
   .nav-toggle { display: block; }
+  /* lang-switch остаётся видимым на мобильном — он внутри .header-actions */
 
   .landing-section .container { grid-template-columns: 1fr; gap: 1rem; }
   .section-label { font-size: 0.75rem; }

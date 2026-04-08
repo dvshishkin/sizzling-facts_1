@@ -1,0 +1,59 @@
+# Navigation
+- id: about
+  translation: "About"
+- id: interests
+  translation: "Interests"
+- id: projects
+  translation: "Projects"
+- id: portfolio
+  translation: "Portfolio"
+- id: blog
+  translation: "Blog"
+
+# Mobile menu button aria-label
+- id: menu
+  translation: "Menu"
+
+# Hero
+- id: hero_eyebrow
+  translation: "Hamburg · food · fermentation · foraging"
+- id: hero_cta
+  translation: "Read the blog →"
+
+# Landing section labels
+- id: section_label_about
+  translation: "About me"
+- id: section_label_interests
+  translation: "Interests"
+- id: section_label_projects
+  translation: "Projects & workshops"
+- id: section_label_portfolio
+  translation: "Photo portfolio"
+- id: section_label_blog
+  translation: "From the blog"
+
+# Interests section — heading and placeholder body
+- id: interests_h2
+  translation: "What I think about and make with my hands"
+- id: interests_body
+  translation: "Fermentation and living cultures. Urban foraging in Hamburg. Wild plants and their use in cooking. Learning through embodied experience."
+
+# Links
+- id: link_more
+  translation: "More"
+- id: link_all_projects
+  translation: "All projects"
+- id: link_portfolio
+  translation: "See portfolio"
+- id: link_all_posts
+  translation: "All posts"
+
+# Note shown in English blog section (blog exists in Russian only)
+- id: blog_in_ru
+  translation: "The blog is in Russian."
+
+# Pagefind (used on the Russian blog — kept here for completeness)
+- id: search_placeholder
+  translation: "Search the blog…"
+- id: search_zero
+  translation: "Nothing found"
