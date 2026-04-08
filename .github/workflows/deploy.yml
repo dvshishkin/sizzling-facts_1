@@ -30,7 +30,7 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --minify --baseURL "https://dvshishkin.github.io/sizzling-facts_1/"
+        run: hugo --minify
 
       - name: Run Pagefind (search index)
         run: npx -y pagefind --site public
