@@ -1,9 +1,7 @@
 {{ define "main" }}
-{{- $base := .Site.BaseURL }}
-{{- $langPfx := "" }}
-{{- with .Site.LanguagePrefix }}{{- $langPfx = strings.TrimPrefix "/" . }}{{- end }}
-{{- $lbase := $base }}
-{{- if $langPfx }}{{- $lbase = print $base $langPfx "/" }}{{- end }}
+{{- $base      := .Site.BaseURL }}
+{{- $lang      := .Lang }}
+{{- $isDefault := eq .Lang .Site.DefaultContentLanguage }}
 
 <!-- ===== ГЕРОЙ ===== -->
 <section class="hero">
@@ -20,10 +18,12 @@
   <div class="container">
     <p class="section-label">{{ i18n "section_label_about" }}</p>
     <div class="section-body">
-      {{ with .Site.GetPage "/about" }}
-        {{ .Content }}
-      {{ end }}
-      <a href="{{ $lbase }}about/" class="section-link">{{ i18n "link_more" }}</a>
+      {{ with .Site.GetPage "/about" }}{{ .Content }}{{ end }}
+      {{- if $isDefault }}
+      <a href="{{ $base }}about/" class="section-link">{{ i18n "link_more" }}</a>
+      {{- else }}
+      <a href="{{ $base }}{{ $lang }}/about/" class="section-link">{{ i18n "link_more" }}</a>
+      {{- end }}
     </div>
   </div>
 </section>
@@ -44,10 +44,12 @@
   <div class="container">
     <p class="section-label">{{ i18n "section_label_projects" }}</p>
     <div class="section-body">
-      {{ with .Site.GetPage "/projects" }}
-        {{ .Content }}
-      {{ end }}
-      <a href="{{ $lbase }}projects/" class="section-link">{{ i18n "link_all_projects" }}</a>
+      {{ with .Site.GetPage "/projects" }}{{ .Content }}{{ end }}
+      {{- if $isDefault }}
+      <a href="{{ $base }}projects/" class="section-link">{{ i18n "link_all_projects" }}</a>
+      {{- else }}
+      <a href="{{ $base }}{{ $lang }}/projects/" class="section-link">{{ i18n "link_all_projects" }}</a>
+      {{- end }}
     </div>
   </div>
 </section>
@@ -66,13 +68,17 @@
         </div>
         {{- end }}
       </div>
-      {{ end }}
-      <a href="{{ $lbase }}portfolio/" class="section-link">{{ i18n "link_portfolio" }}</a>
+      {{- end }}
+      {{- if $isDefault }}
+      <a href="{{ $base }}portfolio/" class="section-link">{{ i18n "link_portfolio" }}</a>
+      {{- else }}
+      <a href="{{ $base }}{{ $lang }}/portfolio/" class="section-link">{{ i18n "link_portfolio" }}</a>
+      {{- end }}
     </div>
   </div>
 </section>
 
-<!-- ===== БЛОГ (последние посты) ===== -->
+<!-- ===== БЛОГ (последние посты) — блог только на русском ===== -->
 <section class="landing-section" id="blog">
   <div class="container">
     <p class="section-label">{{ i18n "section_label_blog" }}</p>

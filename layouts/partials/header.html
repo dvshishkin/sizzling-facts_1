@@ -1,35 +1,41 @@
 <header class="site-header">
-  {{- $base := .Site.BaseURL }}
-  {{- $langPfx := "" }}
-  {{- with .Site.LanguagePrefix }}{{- $langPfx = strings.TrimPrefix "/" . }}{{- end }}
-  {{- $lbase := $base }}
-  {{- if $langPfx }}{{- $lbase = print $base $langPfx "/" }}{{- end }}
+  {{- $base      := .Site.BaseURL }}
+  {{- $lang      := .Lang }}
+  {{- $isDefault := eq .Lang .Site.DefaultContentLanguage }}
   <div class="container">
-    <a href="{{ $lbase }}" class="site-logo">{{ .Site.Title }}</a>
+
+    {{- /* Логотип — ведёт на главную текущего языка */}}
+    {{- if $isDefault }}
+    <a href="{{ $base }}" class="site-logo">{{ .Site.Title }}</a>
+    {{- else }}
+    <a href="{{ $base }}{{ $lang }}/" class="site-logo">{{ .Site.Title }}</a>
+    {{- end }}
+
     <nav class="site-nav">
       {{- range .Site.Params.sections }}
-      {{- $href := print $base (strings.TrimPrefix "/" .href) }}
-      {{- if and (not .absolute) $langPfx }}
-        {{- $href = print $base $langPfx "/" (strings.TrimPrefix "/" .href) }}
+      {{- $trim := strings.TrimPrefix "/" .href }}
+      {{- if or .absolute $isDefault }}
+      <a href="{{ $base }}{{ $trim }}"{{ if eq .id "blog" }} class="nav-blog"{{ end }}>{{ i18n .id }}</a>
+      {{- else }}
+      <a href="{{ $base }}{{ $lang }}/{{ $trim }}"{{ if eq .id "blog" }} class="nav-blog"{{ end }}>{{ i18n .id }}</a>
       {{- end }}
-      <a href="{{ $href }}"{{ if eq .id "blog" }} class="nav-blog"{{ end }}>{{ i18n .id }}</a>
       {{- end }}
     </nav>
+
     <div class="header-actions">
       <div class="lang-switch">
         {{- if .Translations }}
           {{- range .Translations }}
           <a href="{{ .Permalink }}" hreflang="{{ .Lang }}">{{ upper .Lang }}</a>
           {{- end }}
-        {{- else }}
-          {{- if eq .Lang "ru" }}
+        {{- else if $isDefault }}
           <a href="{{ $base }}en/" hreflang="en">EN</a>
-          {{- else }}
+        {{- else }}
           <a href="{{ $base }}" hreflang="ru">RU</a>
-          {{- end }}
         {{- end }}
       </div>
       <button class="nav-toggle" aria-label="{{ i18n `menu` }}">☰</button>
     </div>
+
   </div>
 </header>
