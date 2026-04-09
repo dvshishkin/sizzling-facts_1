@@ -1,13 +1,18 @@
 <header class="site-header">
+  {{- $base := .Site.BaseURL }}
+  {{- $langPfx := "" }}
+  {{- with .Site.LanguagePrefix }}{{- $langPfx = strings.TrimPrefix "/" . }}{{- end }}
+  {{- $lbase := $base }}
+  {{- if $langPfx }}{{- $lbase = print $base $langPfx "/" }}{{- end }}
   <div class="container">
-    <a href="{{ "/" | absLangURL }}" class="site-logo">{{ .Site.Title }}</a>
+    <a href="{{ $lbase }}" class="site-logo">{{ .Site.Title }}</a>
     <nav class="site-nav">
       {{- range .Site.Params.sections }}
-      {{- if .absolute }}
-      <a href="{{ .href | absURL }}"{{ if eq .id "blog" }} class="nav-blog"{{ end }}>{{ i18n .id }}</a>
-      {{- else }}
-      <a href="{{ .href | absLangURL }}"{{ if eq .id "blog" }} class="nav-blog"{{ end }}>{{ i18n .id }}</a>
+      {{- $href := print $base (strings.TrimPrefix "/" .href) }}
+      {{- if and (not .absolute) $langPfx }}
+        {{- $href = print $base $langPfx "/" (strings.TrimPrefix "/" .href) }}
       {{- end }}
+      <a href="{{ $href }}"{{ if eq .id "blog" }} class="nav-blog"{{ end }}>{{ i18n .id }}</a>
       {{- end }}
     </nav>
     <div class="header-actions">
@@ -18,9 +23,9 @@
           {{- end }}
         {{- else }}
           {{- if eq .Lang "ru" }}
-          <a href="{{ "/en/" | absURL }}" hreflang="en">EN</a>
+          <a href="{{ $base }}en/" hreflang="en">EN</a>
           {{- else }}
-          <a href="{{ "/" | absURL }}" hreflang="ru">RU</a>
+          <a href="{{ $base }}" hreflang="ru">RU</a>
           {{- end }}
         {{- end }}
       </div>

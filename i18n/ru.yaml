@@ -1,59 +1,22 @@
-# Навигация (id секций используются как ключи)
-- id: about
-  translation: "Обо мне"
-- id: interests
-  translation: "Интересы"
-- id: projects
-  translation: "Проекты"
-- id: portfolio
-  translation: "Портфолио"
-- id: blog
-  translation: "Блог"
-
-# Переключатель языка (aria-label кнопки мобильного меню)
-- id: menu
-  translation: "Меню"
-
-# Главный экран (герой)
-- id: hero_eyebrow
-  translation: "Гамбург · еда · ферментация · собирательство"
-- id: hero_cta
-  translation: "Читать блог →"
-
-# Метки секций лендинга
-- id: section_label_about
-  translation: "Обо мне"
-- id: section_label_interests
-  translation: "Интересы"
-- id: section_label_projects
-  translation: "Проекты и воркшопы"
-- id: section_label_portfolio
-  translation: "Фото-портфолио"
-- id: section_label_blog
-  translation: "Последнее из блога"
-
-# Секция «Интересы» — заголовок и текст-плейсхолдер
-- id: interests_h2
-  translation: "О чём я думаю и что делаю руками"
-- id: interests_body
-  translation: "Ферментация и живые культуры. Городское собирательство в Гамбурге. Дикие растения и их использование в кухне. Познание через телесный опыт."
-
-# Ссылки
-- id: link_more
-  translation: "Подробнее"
-- id: link_all_projects
-  translation: "Все проекты"
-- id: link_portfolio
-  translation: "Смотреть портфолио"
-- id: link_all_posts
-  translation: "Все записи"
-
-# Блог на английской версии (пусто — блог только на русском)
-- id: blog_in_ru
-  translation: ""
-
-# Pagefind (поиск в блоге)
-- id: search_placeholder
-  translation: "Поиск по блогу…"
-- id: search_zero
-  translation: "Ничего не найдено"
+about: "Обо мне"
+interests: "Интересы"
+projects: "Проекты"
+portfolio: "Портфолио"
+blog: "Блог"
+menu: "Меню"
+hero_eyebrow: "Гамбург · еда · ферментация · собирательство"
+hero_cta: "Читать блог →"
+section_label_about: "Обо мне"
+section_label_interests: "Интересы"
+section_label_projects: "Проекты и воркшопы"
+section_label_portfolio: "Фото-портфолио"
+section_label_blog: "Последнее из блога"
+interests_h2: "О чём я думаю и что делаю руками"
+interests_body: "Ферментация и живые культуры. Городское собирательство в Гамбурге. Дикие растения и их использование в кухне. Познание через телесный опыт."
+link_more: "Подробнее"
+link_all_projects: "Все проекты"
+link_portfolio: "Смотреть портфолио"
+link_all_posts: "Все записи"
+blog_in_ru: ""
+search_placeholder: "Поиск по блогу…"
+search_zero: "Ничего не найдено"

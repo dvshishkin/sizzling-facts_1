@@ -1,4 +1,9 @@
 {{ define "main" }}
+{{- $base := .Site.BaseURL }}
+{{- $langPfx := "" }}
+{{- with .Site.LanguagePrefix }}{{- $langPfx = strings.TrimPrefix "/" . }}{{- end }}
+{{- $lbase := $base }}
+{{- if $langPfx }}{{- $lbase = print $base $langPfx "/" }}{{- end }}
 
 <!-- ===== ГЕРОЙ ===== -->
 <section class="hero">
@@ -6,7 +11,7 @@
     <p class="hero-eyebrow">{{ i18n "hero_eyebrow" }}</p>
     <h1>{{ .Site.Params.author }}</h1>
     <p class="hero-lead">{{ .Site.Params.description }}</p>
-    <a href="{{ .Site.BaseURL }}blog/" class="hero-cta">{{ i18n "hero_cta" }}</a>
+    <a href="{{ $base }}blog/" class="hero-cta">{{ i18n "hero_cta" }}</a>
   </div>
 </section>
 
@@ -17,10 +22,8 @@
     <div class="section-body">
       {{ with .Site.GetPage "/about" }}
         {{ .Content }}
-      {{ else }}
-      <h2>{{ i18n "section_label_about" }}</h2>
       {{ end }}
-      <a href="{{ "/about/" | absLangURL }}" class="section-link">{{ i18n "link_more" }}</a>
+      <a href="{{ $lbase }}about/" class="section-link">{{ i18n "link_more" }}</a>
     </div>
   </div>
 </section>
@@ -44,7 +47,7 @@
       {{ with .Site.GetPage "/projects" }}
         {{ .Content }}
       {{ end }}
-      <a href="{{ "/projects/" | absLangURL }}" class="section-link">{{ i18n "link_all_projects" }}</a>
+      <a href="{{ $lbase }}projects/" class="section-link">{{ i18n "link_all_projects" }}</a>
     </div>
   </div>
 </section>
@@ -64,7 +67,7 @@
         {{- end }}
       </div>
       {{ end }}
-      <a href="{{ "/portfolio/" | absLangURL }}" class="section-link">{{ i18n "link_portfolio" }}</a>
+      <a href="{{ $lbase }}portfolio/" class="section-link">{{ i18n "link_portfolio" }}</a>
     </div>
   </div>
 </section>
@@ -92,7 +95,7 @@
       {{- else }}
         {{- with i18n "blog_in_ru" }}<p class="blog-lang-note">{{ . }}</p>{{ end }}
       {{- end }}
-      <a href="{{ .Site.BaseURL }}blog/" class="section-link">{{ i18n "link_all_posts" }}</a>
+      <a href="{{ $base }}blog/" class="section-link">{{ i18n "link_all_posts" }}</a>
     </div>
   </div>
 </section>
