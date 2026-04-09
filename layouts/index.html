@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{- $base      := .Site.BaseURL }}
 {{- $lang      := .Lang }}
-{{- $isDefault := eq .Lang .Site.DefaultContentLanguage }}
+{{- $isDefault := eq .Lang "ru" }}
 
 <!-- ===== ГЕРОЙ ===== -->
 <section class="hero">

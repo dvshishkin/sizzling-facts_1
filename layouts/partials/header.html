@@ -1,7 +1,7 @@
 <header class="site-header">
   {{- $base      := .Site.BaseURL }}
   {{- $lang      := .Lang }}
-  {{- $isDefault := eq .Lang .Site.DefaultContentLanguage }}
+  {{- $isDefault := eq .Lang "ru" }}
   <div class="container">
 
     {{- /* Логотип — ведёт на главную текущего языка */}}
