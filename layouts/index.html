@@ -20,7 +20,7 @@
       {{ else }}
       <h2>{{ i18n "section_label_about" }}</h2>
       {{ end }}
-      <a href="{{ "/about/" | relLangURL }}" class="section-link">{{ i18n "link_more" }}</a>
+      <a href="{{ "/about/" | absLangURL }}" class="section-link">{{ i18n "link_more" }}</a>
     </div>
   </div>
 </section>
@@ -44,7 +44,7 @@
       {{ with .Site.GetPage "/projects" }}
         {{ .Content }}
       {{ end }}
-      <a href="{{ "/projects/" | relLangURL }}" class="section-link">{{ i18n "link_all_projects" }}</a>
+      <a href="{{ "/projects/" | absLangURL }}" class="section-link">{{ i18n "link_all_projects" }}</a>
     </div>
   </div>
 </section>
@@ -64,7 +64,7 @@
         {{- end }}
       </div>
       {{ end }}
-      <a href="{{ "/portfolio/" | relLangURL }}" class="section-link">{{ i18n "link_portfolio" }}</a>
+      <a href="{{ "/portfolio/" | absLangURL }}" class="section-link">{{ i18n "link_portfolio" }}</a>
     </div>
   </div>
 </section>
