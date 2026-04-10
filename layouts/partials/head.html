@@ -20,3 +20,14 @@
 {{ end }}
 
 <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+{{- /* GLightbox — только на страницах со shortcode gallery */ -}}
+{{- if .HasShortcode "gallery" }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.0/css/glightbox.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.0/js/glightbox.min.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true });
+  });
+</script>
+{{- end }}
