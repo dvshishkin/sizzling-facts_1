@@ -3,7 +3,7 @@
   <div class="page-header">
     <h1>{{ .Title }}</h1>
     {{- with .Params.description }}
-    <p class="page-desc">{{ . }}</p>
+    <p class="page-desc">{{ . | markdownify }}</p>
     {{- end }}
   </div>
 </div>
@@ -28,7 +28,7 @@
         {{- end }}
       </div>
       <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-      {{- with .Params.excerpt }}<p class="post-card-excerpt">{{ . }}</p>
+      {{- with .Params.excerpt }}<p class="post-card-excerpt">{{ . | markdownify }}</p>
       {{- else }}<p class="post-card-excerpt">{{ .Summary }}</p>
       {{- end }}
       {{- with .Params.tags }}
