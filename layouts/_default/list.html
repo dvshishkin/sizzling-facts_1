@@ -18,6 +18,7 @@
 <!-- Список постов -->
 <div class="blog-list">
   {{- range .Pages }}
+  {{- $post := . -}}
   <article class="post-card">
     <div class="post-card-body">
       <div class="post-card-meta">
@@ -40,8 +41,8 @@
     </div>
     {{- with .Params.cover }}
     <div class="post-card-image">
-      <a href="{{ $.RelPermalink }}">
-        <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+      <a href="{{ $post.RelPermalink }}">
+        <img src="{{ . }}" alt="{{ $post.Title }}" loading="lazy">
       </a>
     </div>
     {{- end }}
