@@ -17,7 +17,7 @@
   <!-- Обложка (широкая) -->
   {{- with .Params.cover }}
   <div class="article-cover">
-    <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+    <img src="{{ . }}" alt="{{ $.Title }}">
   </div>
   {{- end }}
 

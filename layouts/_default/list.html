@@ -41,7 +41,7 @@
     {{- with .Params.cover }}
     <div class="post-card-image">
       <a href="{{ $.RelPermalink }}">
-        <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy">
+        <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
       </a>
     </div>
     {{- end }}
