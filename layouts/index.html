@@ -90,7 +90,7 @@
         <div class="blog-preview-card">
           <a href="{{ .RelPermalink }}">
             {{- with .Params.cover }}
-            <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+            <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy">
             {{- end }}
             <h3>{{ .Title }}</h3>
             <span class="card-date">{{ .Date.Format "2 January 2006" }}</span>

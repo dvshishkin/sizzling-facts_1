@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "060b317f219ad741",
+        "id": "eabdb9e9757e52a4",
         "type": "tabs",
         "children": [
           {
-            "id": "20f726453c365691",
+            "id": "e4d7990cde17283b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "blog/Статья на пробу.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Статья на пробу"
+              "title": "New tab"
             }
           }
         ]
@@ -94,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "blog/Статья на пробу.md",
+                "file": "blog/d50-nx5-7-fn-w-p-l-chto-eto-za-shifr.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +100,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Статья на пробу"
+              "title": "Backlinks for d50-nx5-7-fn-w-p-l-chto-eto-za-shifr"
             }
           },
           {
@@ -113,12 +109,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "blog/Статья на пробу.md",
+                "file": "blog/d50-nx5-7-fn-w-p-l-chto-eto-za-shifr.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Статья на пробу"
+              "title": "Outgoing links from d50-nx5-7-fn-w-p-l-chto-eto-za-shifr"
             }
           },
           {
@@ -156,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/Статья на пробу.md",
+                "file": "blog/d50-nx5-7-fn-w-p-l-chto-eto-za-shifr.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Статья на пробу"
+              "title": "Outline of d50-nx5-7-fn-w-p-l-chto-eto-za-shifr"
             }
           }
         ]
@@ -183,15 +179,38 @@
       "bases:Create new base": false
     }
   },
-  "active": "20f726453c365691",
+  "active": "e4d7990cde17283b",
   "lastOpenFiles": [
-    "blog/Screenshot 2026-03-31 at 10.28.31.png",
+    "blog/muka-s-mukoi.md",
+    "blog/dievochka-s-viedrom.md",
+    "blog/d50-nx5-7-fn-w-p-l-chto-eto-za-shifr.md",
+    "images/2026/03/28e918db119746b1cfa3ac6517651f64-Large.jpeg",
+    "images/2026/03/Badejunge3.jpeg",
+    "images/2026/03/IMG_6455-1.jpg",
+    "images/2026/03/IMG_6205-Large-1.jpeg",
+    "images/2026/03/IMG_0408.jpg",
+    "images/2026/03/IMG_6838-Medium.jpeg",
+    "images/2026/03/IMG_4794.jpeg",
+    "images/2026/03/IMG_7726-Medium-1.jpeg",
+    "images/2026/03/IMG_3215-Large-1.jpeg",
+    "images/2026/03/IMG_7489-Large.jpeg",
+    "images/2026/03",
+    "images/2026",
+    "images",
+    "blog/biez-povoda-nie-krichali-tolko-za-oshibki-2.md",
     "blog/Статья на пробу.md",
+    "blog/test-post.md",
+    "blog/_index.md",
+    "blog/promienadologhiia.md",
+    "blog/i-rybku-siest-i-kartofielnyi-salat.md",
+    "blog/rasskazhu-o-pastie-iz-sukhariei.md",
+    "blog/malchik-potierialsia.md",
+    "blog/raki-liubiat-chtoby-ikh-varili-zhivymi.md",
+    "blog/sirop-i-konfiety-iz-khlieba.md",
+    "blog/about.md",
     "Статья на пробу.md",
     "Untitled.md",
-    "blog/test-post.md",
     "2024-01-15.md",
-    "blog/_index.md",
     "about/_index.en.md",
     "about/_index.md",
     "_index.md",
