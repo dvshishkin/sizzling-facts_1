@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/blog/_index.md",
+                "file": "CLAUDE.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "_index"
+              "title": "CLAUDE"
             }
           }
         ]
@@ -185,8 +185,13 @@
   },
   "active": "d856f39ba0cfb88d",
   "lastOpenFiles": [
-    "content/blog/biez-povoda-nie-krichali-tolko-za-oshibki-2.md",
+    "content/_index.en.md",
+    "content/_index.md",
+    "CLAUDE.md",
+    "content/Untitled.md",
+    "content/2024-01-15.md",
     "content/blog/_index.md",
+    "content/blog/biez-povoda-nie-krichali-tolko-za-oshibki-2.md",
     "content/blog/d50-nx5-7-fn-w-p-l-chto-eto-za-shifr.md",
     "content/about/_index.md",
     "scripts/install_hooks.sh",

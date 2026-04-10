@@ -16,7 +16,7 @@ disableKinds = ["taxonomy", "term"]
   [languages.ru]
     languageCode = "ru"
     languageName = "Русский"
-    title        = "Sizzling Facts"
+    title        = "Жареные факты"
     weight       = 1
     [languages.ru.params]
       description = "Иван Шишкин — шеф-повар, преподаватель, Гамбург. О еде, ферментации, городском собирательстве и познании через телесный опыт."
