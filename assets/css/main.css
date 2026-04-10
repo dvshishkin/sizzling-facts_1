@@ -517,6 +517,27 @@ a:hover { text-decoration: underline; }
 }
 
 /* ============================================================
+   ПОДПИСИ К ФОТО
+   ============================================================ */
+.article-figure {
+  margin: 1.5rem 0;
+}
+
+.article-figure img {
+  display: block;
+  width: 100%;
+}
+
+.article-figure figcaption,
+.sf-gallery-wrap figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* ============================================================
    ГАЛЕРЕЯ
    ============================================================ */
 .sf-gallery {
