@@ -1,3 +1,3 @@
 ---
-title: "Sizzling Facts"
+title: Жареные факты
 ---
