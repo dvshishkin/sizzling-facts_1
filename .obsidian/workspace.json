@@ -185,6 +185,9 @@
   },
   "active": "d856f39ba0cfb88d",
   "lastOpenFiles": [
+    "scripts/install_hooks.sh",
+    "scripts/fix_image_paths.py",
+    "scripts",
     "content/blog/promienadologhiia.md",
     "content/blog/biez-povoda-nie-krichali-tolko-za-oshibki-2.md",
     "content/blog/_index.md",
@@ -207,7 +210,6 @@
     "'/static/images/2026",
     "'/static/images",
     "'/static",
-    "'",
     "Screenshot 2026-03-31 at 10.28.31 1.png",
     "Screenshot 2026-03-31 at 10.28.31.png",
     "public/images/2026/03/Screenshot 2026-03-31 at 10.28.31.png",
